@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue JS - Get Query Parameters Example - ItSolutionStuff.com</title>
+	<link rel="stylesheet" href="default.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+ <div class="nav-bar"></div>
+<div class="col-lg-2"></div>
+
+<div id="app" class="col-lg-8">
+
+  <table class="table table-striped">
+    
+    <tr>
+	<td class="col-lg-8"><img v-bind:src="countryData.data[0].flags.png" height="310px"></td>
+	<td><h1>{{countryData.data[0].name.common}}<h1></td>
+	</tr>
+	<tr>
+	<td>Capital</td>
+	<td class="text-left">{{countryData.data[0].capital[0]}}</td>
+	</tr>
+	<tr>
+	<td>Area</td>
+	<td>{{countryData.data[0].area}}</td>
+	</tr>
+	<tr>
+	<td>Region</td>
+	<td>{{countryData.data[0].region}}</td>
+	</tr>
+	<tr>
+	<td>Subregion</td>
+	<td>{{countryData.data[0].subregion}}</td>
+	</tr>
+	<tr>
+	<td>Population</td>
+	<td>{{countryData.data[0].population}}</td>
+	</tr>
+	<tr>
+	<td><button class="btn btn-primary" @click="prevPage">Back</button> </td>
+	<td></td>
+	</tr>
+</table>
+	</div> 
+
+<script src="detailsScript.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

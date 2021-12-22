@@ -1,0 +1,59 @@
+<html>
+<head>
+	<link rel="stylesheet" href="default.css">
+
+	<!-- Load Axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+</head>
+
+<body>
+<div class="nav-bar"></div>
+<div class="col-lg-2"></div>
+
+<div id="app" class="col-lg-8">
+  <h1>Countries</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th @click="sort('name')">Name</th>
+        <th @click="sort('capital')">Capital</th>
+        <th @click="sort('region')">Continent</th>
+        <th @click="sort('population')">Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="country in sortedCountries">
+        <td><a v-bind:href="'./details.html?name='+country.name.common">{{country.name.common}}</a></td>
+        <td>{{country.capital[0]}}</td>
+        <td>{{country.region}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <div class="col-lg-9">Page {{currentPage}}/25</div>
+  <div class="col-lg-2">Total Records 250</div>
+  <br/><br/>
+  <p>
+  <div class="col-lg-2"><button class="btn btn-primary" @click="prevPage">Previous</button> </div>
+  <div class="col-lg-2"><button class="btn btn-primary" @click="nextPage">Next</button></div>
+  </p>
+  
+  <!--debug: sort={{currentSort}}, dir={{currentSortDir}}, -->
+</div>
+
+
+
+<script src="myscripts.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+ </body>
+ 
+ </html>
+ 
